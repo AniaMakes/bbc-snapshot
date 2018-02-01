@@ -66,3 +66,18 @@ var toBeRemoved = document.getElementById("main-story");
 const removedNode = parentNode.removeChild(toBeRemoved);
 
 parentNode.append(removedNode);
+
+// Browser events
+var dateBox = document.querySelector("time");
+// dateBox.style.background-color = "powderblue";
+
+console.log(dateBox);
+function alertDate(){
+  var date = dateBox.dateTime;
+  var dateFormatted = date.slice(8,10) + "-" + date.slice(5,7) + "-" + date.slice(0,4);
+  var manipDate = new Date(date);
+  console.log(manipDate);
+  alert(dateFormatted);
+}
+
+dateBox.addEventListener("click", alertDate);
