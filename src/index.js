@@ -46,14 +46,23 @@ Array.from(topStoriesTextTitles).forEach(title => title.style.color = "#6ef442")
 
 
 // Creating and inserting elements
-var linkItem = document.createElement("li");
-var newA = document.createElement("a");
-linkItem.append(newA);
-newA.href = "http://constructorlabs.com";
-newA.innerHTML = "Constructor Labs";
-linkItem.className = "orb-nav-conlab";
+// var linkItem = document.createElement("li");
+// var newA = document.createElement("a");
+// linkItem.append(newA);
+// newA.href = "http://constructorlabs.com";
+// newA.innerHTML = "Constructor Labs";
+// linkItem.className = "orb-nav-conlab";
+//
+// var parentNode = document.querySelector("#orb-nav-links ul");
+// var sportRef = document.querySelector(".orb-nav-sport");
+//
+// var insertedNode = sportRef.parentNode.insertBefore(linkItem, sportRef);
 
-var parentNode = document.querySelector("#orb-nav-links ul");
-var sportRef = document.querySelector(".orb-nav-sport");
 
-var insertedNode = sportRef.parentNode.insertBefore(linkItem, sportRef);
+// Removing and re-inserting nodes
+
+var parentNode = document.getElementById("top-stories");
+var toBeRemoved = document.getElementById("main-story");
+const removedNode = parentNode.removeChild(toBeRemoved);
+
+parentNode.append(removedNode);
