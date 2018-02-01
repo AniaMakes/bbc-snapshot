@@ -22,14 +22,24 @@
 
 // Query selector exercises
 
-console.log(document.querySelector("#page-title").innerText);
+// console.log(document.querySelector("#page-title").innerText);
+//
+// var listOfTopStories = document.querySelectorAll(".top-story__title");
+//
+// Array.from(listOfTopStories).forEach(story => console.log(story.innerText));
+//
+// var listOfImages = document.querySelectorAll("img");
+// Array.from(listOfImages).forEach(image => console.log(image.src));
+//
+// var orbAsideAList = document.querySelector("#orb-aside").querySelectorAll("a");
+// Array.from(orbAsideAList).forEach(orb => console.log(orb.href));
 
-var listOfTopStories = document.querySelectorAll(".top-story__title");
+// DOM Manipulation
 
-Array.from(listOfTopStories).forEach(story => console.log(story.innerText));
+var navbarLinks = document.querySelector("nav").querySelectorAll("a");
+Array.from(navbarLinks).forEach(link => link.innerHTML = "*" + link.innerHTML + "*");
 
-var listOfImages = document.querySelectorAll("img");
-Array.from(listOfImages).forEach(image => console.log(image.src));
+var topStoriesTextTitles = document.querySelectorAll(".top-story__title");
+Array.from(topStoriesTextTitles).forEach(title => title.innerHTML = "<i>" + title.innerHTML + "</i>")
 
-var orbAsideAList = document.querySelector("#orb-aside").querySelectorAll("a");
-Array.from(orbAsideAList).forEach(orb => console.log(orb.href));
+Array.from(topStoriesTextTitles).forEach(title => title.style.color = "#6ef442");
