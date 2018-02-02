@@ -71,13 +71,23 @@ parentNode.append(removedNode);
 var dateBox = document.querySelector("time");
 // dateBox.style.background-color = "powderblue";
 
-console.log(dateBox);
+dateBox.addEventListener("click", alertDate);
+
 function alertDate(){
   var date = dateBox.dateTime;
   var dateFormatted = date.slice(8,10) + "-" + date.slice(5,7) + "-" + date.slice(0,4);
   var manipDate = new Date(date);
-  console.log(manipDate);
-  alert(dateFormatted);
-}
+  var updatingDate = manipDate.getDate() + 1;
+  var updatedDate = manipDate.setDate(updatingDate);
+  var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var dayOfWeek = daysOfWeek[manipDate.getDay()];
+  var monthNames = [
+  "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+];
+  var currentMonth = monthNames[manipDate.getMonth()];
+  var dayDate = manipDate.getDate();
 
-dateBox.addEventListener("click", alertDate);
+  dateBox.innerText = `${dayOfWeek}, ${dayDate} ${currentMonth} `;
+  alert(dateFormatted);
+
+}
